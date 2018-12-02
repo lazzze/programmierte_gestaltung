@@ -1,0 +1,14 @@
+
+var barWidth = 40;
+
+function setup() {
+  createCanvas(720, 400);
+  colorMode(HSB, height, height, height);
+  noStroke();
+  background(0);
+}
+
+function draw() {
+  fill(mouseY, height, height);
+  rect(mouseX, 0, barWidth, height);
+}

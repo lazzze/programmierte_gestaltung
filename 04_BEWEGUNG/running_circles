@@ -1,0 +1,94 @@
+var b;
+var c;
+var d;
+var e;
+var f;
+var g;
+var h;
+var i;
+var j;
+var k;
+
+function setup() {
+  createCanvas(500, 400);
+  b = height;
+  c = height;
+  d = height;
+  e = width;
+  f = 0;
+  g = 0;
+  h = 0;
+  i = 0;
+  j = width;
+  k = 255;
+}
+
+function draw() {
+  background(0);
+
+  stroke(255);
+  //line(width/2, height/2, a, height);
+  fill(255, 255, 0);
+  ellipse(random(30, 500), d, 40, 40);
+  d = d - 1;
+  if (d < 0) {
+    d = height;
+  }
+
+  fill(255, 0, 0);
+  noStroke();
+  ellipse(b, b, 20, 20);
+  b = b - random(1, 5);
+  if (b < 0) {
+    b = height;
+  }
+
+  fill(255, 0, 255);
+  ellipse(random(130, 150), c, 40, 40);
+  c = c - 3.5;
+  if (c < 0) {
+    c = height;
+  }
+
+  fill(f, 0, 0);
+  ellipse(e, 300, 40, 40);
+  e = e - 1;
+  f = f + 0.3;
+  if (e < 0) {
+    e = width;
+    f = 0;
+  }
+
+  fill(g * 2, g * 4, g * 2, g);
+  ellipse(300, h, g * 3, g * 3);
+  h = h + 2;
+  if (h > height) {
+    h = 0;
+  }
+  if (h < height / 2) {
+    g = g + 1;
+  }
+  if (h > height / 2) {
+    g = g - 1;
+  }
+
+
+  fill(255, k, k);
+  ellipse(j, 100, 40, 40);
+  fill(255, 255, 255);
+  ellipse(i, 100, 5, 5);
+
+  i = i + 1;
+  if (i > height) {
+    i = 0;
+    k = 255;
+  }
+  j = j - 1;
+  if (j < 0) {
+    j = width;
+  }
+  if (i == j) {
+    k = 0;
+  }
+
+}

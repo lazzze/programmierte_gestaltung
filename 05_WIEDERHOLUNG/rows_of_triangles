@@ -1,0 +1,67 @@
+var moveX = 0;
+var moveY = 0;
+var millisec;
+var sec;
+var quadDim = 100;
+var colorValue = 10;
+
+function setup() {
+  colorMode(HSB, 360, 100, 100, 100);
+  createCanvas(800, 800);
+  background(0)
+  rectMode(CENTER);
+}
+
+function draw() {
+  millisec = millis();
+  sec = second();
+  //fill(sec*6, 100, 100, 100);
+  noFill()
+  //stroke(random(180, 200), 100, sec * 2, 50);
+  stroke(210, 100, colorValue, 100);
+  //strokeWeight(frameCount*0.01);
+  strokeWeight(0.5);
+  //noStroke();
+  //rect(moveX, moveY, random(5, sec), random(5, sec));
+  //triangle(moveX, moveY,moveX+30, moveY+30);
+  //triangle(moveX, moveY, moveX+15, moveY-30, moveX+30, moveY);
+  //triangle(moveX + random(-10, 10), moveY, moveX + 15, moveY - 30, moveX + 30 + random(-10, 10), moveY);
+  quad(moveX+random(-quadDim, quadDim), moveY+random(-quadDim, quadDim),moveX+random(-quadDim, quadDim), moveY+random(-quadDim, quadDim), moveX+random(-quadDim, quadDim), moveY+random(-quadDim, quadDim), moveX+random(-quadDim, quadDim), moveY)+random(-quadDim, quadDim);
+  moveX += 40;
+  if (moveX >= width) {
+    moveX = 0;
+    moveY += 40;
+  }
+  if (moveY >= height) {
+    moveY = 0;
+    colorValue = colorValue + 10;
+  }
+  if (frameCount > 4000) {
+    noStroke();
+    fill(0, 100, 100, 100);
+    ellipse(moveX+random(-quadDim, quadDim), moveY+random(-quadDim, quadDim), 20, 20)
+  }
+}
+
+function mousePressed() {
+  noLoop();
+}
+
+function keyTyped() {
+
+  if (key === '0') {
+    background(0)
+  }
+  return false;
+}
+
+//colorMode(RGB, 100, 100, 100, 100);
+//colorMode(HSB, 360, 100, 100, 100);
+//strokeWeight(random(10));
+//strokeWeight(millisecond%100);
+//stroke(s*(random(10)), 0, s, 100);
+
+
+
+
+//print("moveX:" + moveX);
