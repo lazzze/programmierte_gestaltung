@@ -33,6 +33,9 @@ function draw() {
   //---------------------- DRAW THE LINE GRID ------------------------
 
   line(moveX, moveY, moveX, moveY + 40);
+
+  // conditions for not drawing over the edges of the canvas
+
   if (red > 0.1) {
     moveX += 10;
   }
