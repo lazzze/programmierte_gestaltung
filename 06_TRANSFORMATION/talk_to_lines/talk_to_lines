@@ -1,5 +1,5 @@
 /*
-level of microfone changes color / strokeweight of line
+level of microphone changes color / strokeweight of line
 press 0: delete the contet of the canvas
 
 programmiertes gestalten / lazzeroni / 2018
@@ -27,7 +27,8 @@ function draw() {
   strokeWeight(2);
   //strokeWeight(random(red * 10));
 
-  stroke(0 + red * 10, 0, 0, 50); //change the color of the stroke depending the microphone level
+  stroke(red, 0, 0); //change the color of the stroke depending the microphone level
+  //stroke(red, 0, 0, 50);
 
   //---------------------- DRAW THE LINE GRID ------------------------
 
@@ -35,11 +36,11 @@ function draw() {
   if (red > 0.1) {
     moveX += 10;
   }
-  if (moveX >= 400) {
+  if (moveX >= width) {
     moveX = 0;
     moveY += 50;
   }
-  if (moveY >= 400) {
+  if (moveY >= height) {
     moveY = 0;
   }
 
