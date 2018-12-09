@@ -1,0 +1,53 @@
+/*
+level of microfone changes color / strokeweight of line
+press 0: delete the contet of the canvas
+
+programmiertes gestalten / lazzeroni / 2018
+*/
+
+var mic;
+var moveX = 0;
+var moveY = 0;
+
+
+function setup() {
+  createCanvas(800, 800);
+  background(0)
+  mic = new p5.AudioIn(); // start the function to scan the microphone input
+  mic.start();
+}
+
+function draw() {
+
+  var vol = mic.getLevel(); // get the level of the microphone into the variable "mic"
+
+  var red = map(vol, 0, 1, 0, 255); // map the microphone values 0-1 to values from 0 to 255
+  //var red = map(vol, 0.01, 1, 0, 255);
+
+  strokeWeight(2);
+  //strokeWeight(random(red * 10));
+
+  stroke(0 + red * 10, 0, 0, 50); //change the color of the stroke depending the microphone level
+
+  //---------------------- DRAW THE LINE GRID ------------------------
+
+  line(moveX, moveY, moveX, moveY + 40);
+  if (red > 0.1) {
+    moveX += 10;
+  }
+  if (moveX >= 400) {
+    moveX = 0;
+    moveY += 50;
+  }
+  if (moveY >= 400) {
+    moveY = 0;
+  }
+
+  //------------------------------------------------------------------
+}
+
+function keyTyped() {
+  if (key === '0') {
+    background(0)
+  }
+}
