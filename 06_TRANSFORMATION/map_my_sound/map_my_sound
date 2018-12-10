@@ -1,6 +1,10 @@
 /*
 level of microphone changes color / strokeweight of line
+
+first click in the canvas to interact with keyboard !
 press 0: delete the content of the canvas
+press 1: stop the loop
+press 2: restart the loop
 
 programmiertes gestalten / lazzeroni / 2018
 */
@@ -53,8 +57,17 @@ function draw() {
   //------------------------------------------------------------------
 }
 
+
+// interaction with the keyboard
+
 function keyTyped() {
   if (key === '0') {
     background(0)
+  }
+  if (key === '1') {
+    noLoop();
+  }
+  if (key === '2') {
+    loop();
   }
 }
