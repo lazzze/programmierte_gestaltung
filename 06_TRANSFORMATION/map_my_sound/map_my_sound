@@ -26,9 +26,11 @@ function draw() {
   var vol = mic.getLevel(); // get the level of the microphone into the variable "vol"
 
   var red = map(vol, 0, 1, 0, 255); // map the microphone values 0-1 to values from 0 to 255
+  //var strokeValue = map(vol, 0, 1, 1, 39); // map the microphone values 0-1 to values from 0 to 255
   //var red = map(vol, 0.01, 1, 0, 255);
 
-  strokeWeight(2);
+  strokeWeight(4);
+  //strokeWeight(strokeValue);
   //strokeWeight(random(red * 10));
 
   stroke(red, 0, 0); //change the color of the stroke depending the microphone level
