@@ -17,8 +17,8 @@ var moveY = 0;
 function setup() {
   createCanvas(800, 800);
   background(0)
-  mic = new p5.AudioIn(); // start the function to scan the microphone input
-  mic.start();
+  mic = new p5.AudioIn(); // write the audiodata into the variable mic
+  mic.start(); // start the function to get the microphone input
 }
 
 function draw() {
@@ -33,18 +33,14 @@ function draw() {
   //strokeWeight(strokeValue);
   //strokeWeight(random(red * 10));
 
-  stroke(red, 0, 0); //change the color of the stroke depending the microphone level
+  stroke(red*10, 0, 0); //change the color of the stroke depending the microphone level
   //stroke(red, 0, 0, 50);
 
   //---------------------- DRAW THE LINE GRID ------------------------
 
   line(moveX, moveY, moveX, moveY + 40);
 
-  // condition for moving the line
-
-  if (red > 0.1) {
-    moveX += 10;
-  }
+  moveX += 10;
 
   // conditions for not drawing over the edges of the canvas
 
