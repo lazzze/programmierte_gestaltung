@@ -15,10 +15,10 @@ function draw() {
 stroke(255);
   var spectrum = fft.analyze();
 
-  strokeWeight(1);
+  strokeWeight(20);
 
-   beginShape();
-   for (i = 0; i<spectrum.length; i++) {
+   beginShape(POINTS);
+   for (i = 0; i<spectrum.length; i+=30) {
     vertex(i, map(spectrum[i], 0, 255, 600, 0) );
    }
    endShape();
