@@ -1,0 +1,17 @@
+var video;
+var colorValue;
+
+function setup() {
+  createCanvas(400, 400);
+  video = createCapture(VIDEO);
+  video.size(320, 240);
+  // video.hide();
+}
+
+function draw() {
+  background(220);
+  noStroke();
+  colorValue = video.get(100, 60);
+  fill(colorValue);
+  rect(0, 0, width, height);
+}
