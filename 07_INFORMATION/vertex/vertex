@@ -1,0 +1,21 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  stroke(255);
+  strokeWeight(0.1);
+  noFill();
+  beginShape();
+
+  vertex(10, 10);
+  vertex(30, 20);
+  vertex(90, 80);
+  vertex(150, 200);
+  vertex(80, 220);
+  vertex(60, 210);
+  vertex(10, 150);
+  vertex(20, 100);
+
+  endShape(CLOSE);
+}

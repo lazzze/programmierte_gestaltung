@@ -1,0 +1,13 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  stroke(255);
+  strokeWeight(10);
+  beginShape(POINTS);
+  for (x = 20; x < 300; x += 12) {
+    vertex(x, 200);
+  }
+  endShape();
+}
